@@ -158,7 +158,7 @@ class ResultSection extends StatelessWidget {
           ElevatedButton(
             onPressed: () { },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 75, 229, 64),
+              backgroundColor: const Color.fromARGB(255, 52, 188, 43),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
