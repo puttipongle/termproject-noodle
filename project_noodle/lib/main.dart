@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_noodle/pages/CalculatorCal.dart';
 import 'package:project_noodle/pages/homepage.dart';
 
 
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Project-Noodle',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => const HomePage()
-      //  '/QPage': (context) => 
+        '/': (context) => const HomePage(),
+       '/Calculator': (context) => Calculatorcal()
       },
     );
   }
