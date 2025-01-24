@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_noodle/pages/CalculatorCal.dart';
 import 'package:project_noodle/pages/homepage.dart';
-import 'package:device_preview_plus/device_preview_plus.dart';
+//import 'package:device_preview_plus/device_preview_plus.dart';
 
 void main() {
   runApp(const MyApp());

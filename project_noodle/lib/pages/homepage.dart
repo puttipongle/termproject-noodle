@@ -21,117 +21,146 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffedf3f6),
-      body: Column(children: [
-        Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              children: [
-                Stack(children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5),
+        backgroundColor: Color(0xFFFFF3E0),
+        body: Container(
+          decoration: BoxDecoration(),
+          child: Column(children: [
+            Padding(
+                padding: const EdgeInsets.only(
+                    left: 10, right: 10, top: 10, bottom: 10),
+                child: Stack(children: <Widget>[
+                  Container(
+                    padding:
+                        const EdgeInsets.only(left: 10, right: 10, bottom: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          height: 180,
-                          padding:
-                              EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 101, 210, 234),
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20))),
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                GlowingBorder(
-                                  child: Container(
-                                    width: 300,
-                                    height: 100,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
+                        GlowingBorder(
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 45, 45, 45),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.only(left: 20, right: 20),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'ร้านก๋วยเตี๋ยวป้าศรี',
+                                    style: GoogleFonts.sriracha(
+                                      fontSize: 23,
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Text(
-                                      'ร้านก๋วยเตี๋ยวป้าศรี เจ้าเก่า',
-                                      style: GoogleFonts.mitr(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        decoration:
-                                            TextDecoration.none, // ลบเส้นขีดใต้
-                                      ),
+                                      decoration:
+                                          TextDecoration.none, // ลบเส้นขีดใต้
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         )
                       ],
                     ),
                   ),
-                ]),
-              ],
-            )
-            ),
-        SizedBox(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    '/Calculator',
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 142, 238, 69),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                ])),
+            Container(
+              child: Column(
+                children: [
+                  SizedBox(
+                    child: Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20)),
+                          color: const Color.fromARGB(255, 236, 141, 64)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                '/Calculator',
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 239, 250, 35),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.symmetric(vertical: 12),
+                              minimumSize: const Size(288, 56),
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.all(5),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(
+                                    Icons.calculate,
+                                    color: Colors.black,
+                                    size: 25,
+                                  ),
+                                  Text(
+                                    ' เครื่องคำนวณแคลลอรี ',
+                                    style: GoogleFonts.sriracha(
+                                      fontSize: 25,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  minimumSize: const Size(288, 56),
-                ),
-                child: const Text(
-                  'Calculator Calories',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 10, bottom: 10),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 96, 240, 235),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(5),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'เมนูก๋วยเตี๋ยวพร้อมรายละเอียด',
+                    style: GoogleFonts.sriracha(
+                      fontSize: 25,
+                      color: Colors.black87,
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Section title',
-              style: Theme.of(context).textTheme.bodyMedium,
             ),
-          ),
-        ),
-        Expanded(
-          child: ListView.separated(
-            itemCount: 4,
-            separatorBuilder: (context, index) => const Divider(
-              height: 1,
-              color: Color(0xFFCAC4D0),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                ),
+                child: ListView.separated(
+                  itemCount: 20,
+                  separatorBuilder: (context, index) => const Divider(
+                    height: 1,
+                    color: Colors.grey,
+                  ),
+                  itemBuilder: (context, index) => const MenuListItem(),
+                ),
+              ),
             ),
-            itemBuilder: (context, index) => const MenuListItem(),
-          ),
-        ),
-      ]),
-    );
+          ]),
+        ));
   }
 }
 
@@ -146,26 +175,37 @@ class MenuListItem extends StatelessWidget {
         children: [
           const SizedBox(width: 16),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  'List item',
-                  style: TextStyle(
-                    fontSize: 16,
-                    letterSpacing: 0.5,
-                    decoration: TextDecoration.none,
-                  ),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: const Color.fromARGB(255, 211, 48, 48),
+                  child: const Text('AH'),
                 ),
-                SizedBox(height: 4),
-                Text(
-                  'Supporting line text lorem ipsum dolor sit amet, consectetur.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    letterSpacing: 0.25,
-                    color: Color(0xFF49454F),
-                    decoration: TextDecoration.none,
-                  ),
+                SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'List item',
+                      style: TextStyle(
+                        fontSize: 16,
+                        letterSpacing: 0.5,
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Supporting line text lorem ipsum.',
+                      style: TextStyle(
+                        fontSize: 14,
+                        letterSpacing: 0.25,
+                        color: Color(0xFF49454F),
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -179,9 +219,10 @@ class MenuListItem extends StatelessWidget {
 class GlowingBorder extends StatefulWidget {
   final Widget child;
 
-  const GlowingBorder({required this.child, Key? key}) : super(key: key);
+  const GlowingBorder({required this.child, super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _GlowingBorderState createState() => _GlowingBorderState();
 }
 
@@ -210,9 +251,17 @@ class _GlowingBorderState extends State<GlowingBorder>
       animation: _controller,
       builder: (context, child) {
         return Container(
-          padding: const EdgeInsets.all(4), // ระยะขอบกรอบไฟ
+          padding: const EdgeInsets.all(6), // ระยะขอบกรอบไฟ
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                // ignore: deprecated_member_use
+                color: Colors.red.withOpacity(0.5),
+                blurRadius: 8,
+                spreadRadius: 4,
+              ),
+            ],
             gradient: SweepGradient(
               colors: [
                 Colors.blue,
