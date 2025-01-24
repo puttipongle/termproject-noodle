@@ -23,7 +23,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Color(0xFFFFF3E0),
         body: Container(
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(image: DecorationImage(
+            image: AssetImage("assets/bg/back1.jpg"),
+            fit: BoxFit.cover,
+          ),),
           child: Column(children: [
             Padding(
                 padding: const EdgeInsets.only(
@@ -31,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 child: Stack(children: <Widget>[
                   Container(
                     padding:
-                        const EdgeInsets.only(left: 10, right: 10, bottom: 5),
+                        const EdgeInsets.only(left: 10, right: 10, bottom: 5,top: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -76,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(20),
                               topRight: Radius.circular(20)),
-                          color: const Color.fromARGB(255, 236, 141, 64)),
+                          color: Colors.black.withOpacity(0.2)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -89,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor:
-                                  const Color.fromARGB(255, 239, 250, 35),
+                                  const Color.fromARGB(255, 116, 231, 77),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
@@ -128,17 +131,17 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: EdgeInsets.only(top: 10, bottom: 10),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 96, 240, 235),
+                color: const Color.fromARGB(255, 132, 233, 136).withOpacity(0.5),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(5),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    'เมนูก๋วยเตี๋ยวพร้อมรายละเอียด',
+                    'เมนูก๋วยเตี๋ยวยอดฮิต!!',
                     style: GoogleFonts.sriracha(
                       fontSize: 25,
-                      color: Colors.black87,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -147,10 +150,10 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: Colors.white,
                 ),
                 child: ListView.separated(
-                  itemCount: 20,
+                  itemCount: 15,
                   separatorBuilder: (context, index) => const Divider(
                     height: 1,
                     color: Colors.grey,
@@ -216,6 +219,7 @@ class MenuListItem extends StatelessWidget {
   }
 }
 
+//จัดการป้ายไฟวิ่ง
 class GlowingBorder extends StatefulWidget {
   final Widget child;
 
