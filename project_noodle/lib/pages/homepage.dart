@@ -34,39 +34,59 @@ class _HomePageState extends State<HomePage> {
   List<Noodle> noodle = [
     Noodle(
         name: 'ข้าวซอยไก่',
-        material: 'เส้นข้าวซอย น้ำข้าวซอย น่องไก่',
+        material: 'เส้นข้าวซอย น่องไก่',
         calorie: '710',
-        img: ''),
+        img: 'thai-noodle.jpg'),
     Noodle(
         name: 'เส้นเล็กน้ำตกหมู',
         material: 'เส้นเล็ก หมูนุ่ม ลูกชิ้นหมู',
         calorie: '540',
-        img: ''),
+        img: 'thai-noodle.jpg'),
     Noodle(
         name: 'หมี่เหลืองน้ำใสหมู',
         material: 'เส้นหมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
         calorie: '590',
-        img: ''),
+        img: 'thai-noodle.jpg'),
     Noodle(
         name: 'เส้นเล็กน้ำตกเนื้อ',
         material: 'เส้นเล็ก เนื้อวัว ลูกชิ้นเนื้อ',
         calorie: '670',
-        img: ''),
+        img: 'thai-noodle.jpg'),
     Noodle(
         name: 'หมี่เกี๊ยวหมูแดง',
         material: 'หมี่เหลือง เกี๊ยว หมูแดง ลูกชิ้นหมู',
         calorie: '840',
-        img: ''),
+        img: 'thai-noodle.jpg'),
     Noodle(
         name: 'หมี่เกี๊ยวหมูแดงต้มยำ',
         material: 'หมี่เหลือง เกี๊ยว หมูแดง หมูสับ ลูกชิ้นหมู',
         calorie: '1030',
-        img: ''),
+        img: 'thai-noodle.jpg'),
     Noodle(
         name: 'เส้นใหญ่ต้มยำ',
         material: 'เส้นใหญ่ หมูนุ่ม หมูสับ ลูกชิ้นหมู',
         calorie: '710',
-        img: ''),
+        img: 'thai-noodle.jpg'),
+    Noodle(
+        name: 'เส้นกลางต้มยำ',
+        material: 'เส้นกลาง หมูนุ่ม หมูสับ ลูกชิ้นหมู',
+        calorie: '690',
+        img: 'thai-noodle.jpg'),
+    Noodle(
+        name: 'เส้นกลางน้ำใส',
+        material: 'เส้นกลาง หมูนุ่ม ลูกชิ้นหมู',
+        calorie: '500',
+        img: 'thai-noodle.jpg'),
+    Noodle(
+        name: 'หมี่หยกต้มยำ',
+        material: 'หมี่หยก เกี๊ยว หมูแดง ลูกชิ้นหมู',
+        calorie: '960',
+        img: 'thai-noodle.jpg'),
+    Noodle(
+        name: 'หมี่เหลืองน้ำตกหมู',
+        material: 'หมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
+        calorie: '650',
+        img: 'thai-noodle.jpg'),
   ];
 
   @override
@@ -185,7 +205,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 10, bottom: 10),
               decoration: BoxDecoration(
                 color:
-                    const Color.fromARGB(255, 132, 233, 136).withOpacity(0.5),
+                    const Color.fromARGB(255, 132, 233, 136).withOpacity(0.3),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(5),
@@ -204,7 +224,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 230, 230, 230),
+                    color: const Color.fromARGB(255, 230, 230, 230).withOpacity(0.8),
                   ),
                   child: ListView.builder(
                       itemCount: noodle.length,
@@ -219,11 +239,15 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 noodle[index].name),
                             subtitle: Text(
-                              style: GoogleFonts.sarabun(
+                                style: GoogleFonts.sarabun(
                                   fontSize: 14,
                                   color: Colors.black,
                                 ),
-                                'ส่วนประกอบ : ${noodle[index].material} \nแคลลอรี : ${noodle[index].calorie} กิโลแคลอรี่'),
+                                'ส่วนประกอบ : ${noodle[index].material} \nแคลลอรี : ${noodle[index].calorie} กิโลแคลอรี'),
+                            leading: CircleAvatar(
+                              backgroundImage:
+                                  AssetImage('assets/bg/${noodle[index].img}'),
+                            ),
                           ),
                         );
                       })),
