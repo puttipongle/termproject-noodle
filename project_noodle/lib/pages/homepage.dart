@@ -17,24 +17,77 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+class Noodle {
+  late String name;
+  late String material;
+  late String calorie;
+  late String img;
+
+  Noodle(
+      {required this.name,
+      required this.material,
+      required this.calorie,
+      required this.img});
+}
+
 class _HomePageState extends State<HomePage> {
+  List<Noodle> noodle = [
+    Noodle(
+        name: 'ข้าวซอยไก่',
+        material: 'เส้นข้าวซอย น้ำข้าวซอย น่องไก่',
+        calorie: '710',
+        img: ''),
+    Noodle(
+        name: 'เส้นเล็กน้ำตกหมู',
+        material: 'เส้นเล็ก หมูนุ่ม ลูกชิ้นหมู',
+        calorie: '540',
+        img: ''),
+    Noodle(
+        name: 'หมี่เหลืองน้ำใสหมู',
+        material: 'เส้นหมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
+        calorie: '590',
+        img: ''),
+    Noodle(
+        name: 'เส้นเล็กน้ำตกเนื้อ',
+        material: 'เส้นเล็ก เนื้อวัว ลูกชิ้นเนื้อ',
+        calorie: '670',
+        img: ''),
+    Noodle(
+        name: 'หมี่เกี๊ยวหมูแดง',
+        material: 'หมี่เหลือง เกี๊ยว หมูแดง ลูกชิ้นหมู',
+        calorie: '840',
+        img: ''),
+    Noodle(
+        name: 'หมี่เกี๊ยวหมูแดงต้มยำ',
+        material: 'หมี่เหลือง เกี๊ยว หมูแดง หมูสับ ลูกชิ้นหมู',
+        calorie: '1030',
+        img: ''),
+    Noodle(
+        name: 'เส้นใหญ่ต้มยำ',
+        material: 'เส้นใหญ่ หมูนุ่ม หมูสับ ลูกชิ้นหมู',
+        calorie: '710',
+        img: ''),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFFFFF3E0),
         body: Container(
-          decoration: BoxDecoration(image: DecorationImage(
-            image: AssetImage("assets/bg/back1.jpg"),
-            fit: BoxFit.cover,
-          ),),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/bg/back1.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(children: [
             Padding(
                 padding: const EdgeInsets.only(
                     left: 10, right: 10, top: 10, bottom: 10),
                 child: Stack(children: <Widget>[
                   Container(
-                    padding:
-                        const EdgeInsets.only(left: 10, right: 10, bottom: 5,top: 10),
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, bottom: 5, top: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -131,7 +184,8 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: EdgeInsets.only(top: 10, bottom: 10),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 132, 233, 136).withOpacity(0.5),
+                color:
+                    const Color.fromARGB(255, 132, 233, 136).withOpacity(0.5),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(5),
@@ -149,18 +203,30 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: ListView.separated(
-                  itemCount: 15,
-                  separatorBuilder: (context, index) => const Divider(
-                    height: 1,
-                    color: Colors.grey,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 230, 230, 230),
                   ),
-                  itemBuilder: (context, index) => const MenuListItem(),
-                ),
-              ),
+                  child: ListView.builder(
+                      itemCount: noodle.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: ListTile(
+                            title: Text(
+                                style: GoogleFonts.sarabun(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                noodle[index].name),
+                            subtitle: Text(
+                              style: GoogleFonts.sarabun(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                                'ส่วนประกอบ : ${noodle[index].material} \nแคลลอรี : ${noodle[index].calorie} กิโลแคลอรี่'),
+                          ),
+                        );
+                      })),
             ),
           ]),
         ));
