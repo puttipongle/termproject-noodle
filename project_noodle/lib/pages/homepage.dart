@@ -257,58 +257,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class MenuListItem extends StatelessWidget {
-  const MenuListItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Row(
-        children: [
-          const SizedBox(width: 16),
-          Expanded(
-            child: Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: const Color.fromARGB(255, 211, 48, 48),
-                  child: const Text('AH'),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'List item',
-                      style: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 0.5,
-                        decoration: TextDecoration.none,
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Supporting line text lorem ipsum.',
-                      style: TextStyle(
-                        fontSize: 14,
-                        letterSpacing: 0.25,
-                        color: Color(0xFF49454F),
-                        decoration: TextDecoration.none,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 //จัดการป้ายไฟวิ่ง
 class GlowingBorder extends StatefulWidget {
   final Widget child;
