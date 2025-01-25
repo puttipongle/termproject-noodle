@@ -224,7 +224,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 230, 230, 230).withOpacity(0.8),
+                    color: const Color.fromARGB(255, 230, 230, 230).withOpacity(0.6),
                   ),
                   child: ListView.builder(
                       itemCount: noodle.length,

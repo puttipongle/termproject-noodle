@@ -37,17 +37,13 @@ class _CalculatorcalState extends State<Calculatorcal> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/bg/back1.jpg"),
+            image: AssetImage("assets/bg/noodle.jpg"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
+        child:Column(
           children: [
             Header(),
-            
-            // FoodSelection(label: 'Noodle'),
-            // FoodSelection(label: 'Soup'),
-            // FoodSelection(label: 'Topping'),
             Container(
                 padding: EdgeInsets.only(top: 10, bottom: 10),
                 decoration: BoxDecoration(
@@ -61,7 +57,7 @@ class _CalculatorcalState extends State<Calculatorcal> {
                         Column(
                           children: [
                             //ส่วนของการเลือกเส้น
-                            Container( 
+                            Container(
                               padding: EdgeInsets.all(10),
                               child: DropdownButtonHideUnderline(
                                 child: DropdownButton2<String>(
@@ -523,63 +519,6 @@ class Header extends StatelessWidget {
   }
 }
 
-// class FoodSelection extends StatelessWidget {
-//   final String label;
-
-//   const FoodSelection({
-//     super.key,
-//     required this.label,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-//       decoration: const BoxDecoration(
-//         boxShadow: [
-//           BoxShadow(
-//             color: Color.fromRGBO(247, 111, 111, 0.971),
-//             offset: Offset(0, 4),
-//             blurRadius: 4,
-//           ),
-//         ],
-//       ),
-//       child: Row(
-//         children: [
-//           Text(
-//             label,
-//             style: const TextStyle(
-//               fontSize: 22,
-//               fontWeight: FontWeight.w400,
-//               height: 28 / 22,
-//             ),
-//           ),
-//           const SizedBox(width: 24),
-//           Expanded(
-//             child: Container(
-//               height: 40,
-//               decoration: BoxDecoration(
-//                 color: const Color(0xFF4EAFA7),
-//                 borderRadius: BorderRadius.circular(100),
-//               ),
-//               alignment: Alignment.center,
-//               child: const Text(
-//                 'Dropdown',
-//                 style: TextStyle(
-//                   color: Colors.white,
-//                   fontSize: 14,
-//                   fontWeight: FontWeight.w500,
-//                   letterSpacing: 0.1,
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class ResultSection extends StatelessWidget {
   const ResultSection({super.key});
 
@@ -589,21 +528,34 @@ class ResultSection extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
-          const Text(
-            'Result',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
+          Container(
+            padding: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.6),
+                borderRadius: BorderRadius.circular(20)),
+            child: Text(
+              'ส่วนประกอบที่เลือก',
+              style: GoogleFonts.sarabun(
+                fontSize: 26,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none, // ลบเส้นขีดใต้
+              ),
             ),
           ),
-          const SizedBox(height: 10),
-          Container(
-            height: 82,
-            width: 297,
-            color: const Color(0xFFDCD6D6),
+          const SizedBox(height: 2),
+          Container( //แสดงส่วนประกอบ
+            height: 80,
+            width: 400,
+            color: const Color(0xFFDCD6D6).withOpacity(0.8),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 2),
+          Container( //แสดงผลลัพธ์
+            height: 50,
+            width: 200,
+            color: const Color(0xFFDCD6D6).withOpacity(0.8),
+          ),
+          const SizedBox(height: 2),
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
@@ -614,12 +566,14 @@ class ResultSection extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 12),
               minimumSize: const Size(150, 60),
             ),
-            child: const Text(
-              'Calculator',
-              style: TextStyle(
+            child: Text(
+              'คำนวณ',
+              style: GoogleFonts.sarabun(
                 fontSize: 24,
-                color: Colors.white,
-              ),
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none,
+              )
             ),
           ),
         ],
