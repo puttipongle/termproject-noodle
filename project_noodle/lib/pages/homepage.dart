@@ -36,57 +36,52 @@ class _HomePageState extends State<HomePage> {
         name: 'ข้าวซอยไก่',
         material: 'เส้นข้าวซอย น่องไก่',
         calorie: '710',
-        img: 'thai-noodle.jpg'),
+        img: '1-kaosoy.jpg'),
     Noodle(
         name: 'เส้นเล็กน้ำตกหมู',
         material: 'เส้นเล็ก หมูนุ่ม ลูกชิ้นหมู',
         calorie: '540',
-        img: 'thai-noodle.jpg'),
+        img: '2-leknamtok.jpg'),
     Noodle(
         name: 'หมี่เหลืองน้ำใสหมู',
         material: 'เส้นหมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
         calorie: '590',
-        img: 'thai-noodle.jpg'),
+        img: '3-eggnamsai.jpg'),
     Noodle(
         name: 'เส้นเล็กน้ำตกเนื้อ',
         material: 'เส้นเล็ก เนื้อวัว ลูกชิ้นเนื้อ',
         calorie: '670',
-        img: 'thai-noodle.jpg'),
+        img: '4-leknamtokcow.jpg'),
     Noodle(
         name: 'หมี่เกี๊ยวหมูแดง',
         material: 'หมี่เหลือง เกี๊ยว หมูแดง ลูกชิ้นหมู',
         calorie: '840',
-        img: 'thai-noodle.jpg'),
+        img: '5-Mheemoodaeng.jpg'),
     Noodle(
         name: 'หมี่เกี๊ยวหมูแดงต้มยำ',
         material: 'หมี่เหลือง เกี๊ยว หมูแดง หมูสับ ลูกชิ้นหมู',
         calorie: '1030',
-        img: 'thai-noodle.jpg'),
+        img: '6-Mheemoodaeng-tomyum.jpg'),
     Noodle(
         name: 'เส้นใหญ่ต้มยำ',
         material: 'เส้นใหญ่ หมูนุ่ม หมูสับ ลูกชิ้นหมู',
         calorie: '710',
-        img: 'thai-noodle.jpg'),
+        img: '7-yaitomyum.jpg'),
     Noodle(
-        name: 'เส้นกลางต้มยำ',
-        material: 'เส้นกลาง หมูนุ่ม หมูสับ ลูกชิ้นหมู',
+        name: 'วุ้นเส้นต้มยำ',
+        material: 'วุ้นเส้น หมูนุ่ม หมูสับ ลูกชิ้นหมู',
         calorie: '690',
-        img: 'thai-noodle.jpg'),
-    Noodle(
-        name: 'เส้นกลางน้ำใส',
-        material: 'เส้นกลาง หมูนุ่ม ลูกชิ้นหมู',
-        calorie: '500',
-        img: 'thai-noodle.jpg'),
+        img: '8-woonsentomyum.jpg'),
     Noodle(
         name: 'หมี่หยกต้มยำ',
         material: 'หมี่หยก เกี๊ยว หมูแดง ลูกชิ้นหมู',
         calorie: '960',
-        img: 'thai-noodle.jpg'),
+        img: '9-jadetomyum.jpg'),
     Noodle(
         name: 'หมี่เหลืองน้ำตกหมู',
         material: 'หมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
         calorie: '650',
-        img: 'thai-noodle.jpg'),
+        img: '10-enggtomyummoo.jpg'),
   ];
 
   @override
@@ -224,32 +219,35 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 230, 230, 230).withOpacity(0.6),
+                    color: const Color.fromARGB(255, 230, 230, 230)
+                        .withOpacity(0.6),
                   ),
                   child: ListView.builder(
                       itemCount: noodle.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          child: ListTile(
-                            title: Text(
-                                style: GoogleFonts.sarabun(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                        return GestureDetector(
+                            onTap: () {},
+                            child: Card(
+                              child: ListTile(
+                                title: Text(
+                                    style: GoogleFonts.sarabun(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    noodle[index].name),
+                                subtitle: Text(
+                                    style: GoogleFonts.sarabun(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                    'ส่วนประกอบ : ${noodle[index].material} \nแคลลอรี : ${noodle[index].calorie} กิโลแคลอรี'),
+                                leading: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      'assets/noodle/${noodle[index].img}'),
                                 ),
-                                noodle[index].name),
-                            subtitle: Text(
-                                style: GoogleFonts.sarabun(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                ),
-                                'ส่วนประกอบ : ${noodle[index].material} \nแคลลอรี : ${noodle[index].calorie} กิโลแคลอรี'),
-                            leading: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/bg/${noodle[index].img}'),
-                            ),
-                          ),
-                        );
+                              ),
+                            ));
                       })),
             ),
           ]),

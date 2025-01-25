@@ -138,9 +138,9 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                     scrollbarTheme: ScrollbarThemeData(
                                       radius: const Radius.circular(40),
                                       thickness:
-                                          MaterialStateProperty.all<double>(6),
+                                          WidgetStateProperty.all<double>(6),
                                       thumbVisibility:
-                                          MaterialStateProperty.all<bool>(true),
+                                          WidgetStateProperty.all<bool>(true),
                                     ),
                                   ),
                                   menuItemStyleData: const MenuItemStyleData(
@@ -233,9 +233,9 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                     scrollbarTheme: ScrollbarThemeData(
                                       radius: const Radius.circular(40),
                                       thickness:
-                                          MaterialStateProperty.all<double>(6),
+                                          WidgetStateProperty.all<double>(6),
                                       thumbVisibility:
-                                          MaterialStateProperty.all<bool>(true),
+                                          WidgetStateProperty.all<bool>(true),
                                     ),
                                   ),
                                   menuItemStyleData: const MenuItemStyleData(
@@ -328,9 +328,9 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                     scrollbarTheme: ScrollbarThemeData(
                                       radius: const Radius.circular(40),
                                       thickness:
-                                          MaterialStateProperty.all<double>(6),
+                                          WidgetStateProperty.all<double>(6),
                                       thumbVisibility:
-                                          MaterialStateProperty.all<bool>(true),
+                                          WidgetStateProperty.all<bool>(true),
                                     ),
                                   ),
                                   menuItemStyleData: const MenuItemStyleData(
@@ -423,9 +423,9 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                     scrollbarTheme: ScrollbarThemeData(
                                       radius: const Radius.circular(40),
                                       thickness:
-                                          MaterialStateProperty.all<double>(6),
+                                          WidgetStateProperty.all<double>(6),
                                       thumbVisibility:
-                                          MaterialStateProperty.all<bool>(true),
+                                          WidgetStateProperty.all<bool>(true),
                                     ),
                                   ),
                                   menuItemStyleData: const MenuItemStyleData(
