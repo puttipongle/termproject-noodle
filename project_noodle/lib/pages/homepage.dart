@@ -39,70 +39,80 @@ class _HomePageState extends State<HomePage> {
     Noodle(
         id: 1,
         name: 'ข้าวซอยไก่',
-        material: 'เส้นข้าวซอย 240 กิโลแคลลอรี \nน้ำข้าวซอย 250 กิโลแคลลอรี \nน่องไก่ 220 กิโลแคลลอรี',
+        material:
+            'เส้นข้าวซอย 240 กิโลแคลลอรี \nน้ำข้าวซอย 250 กิโลแคลลอรี \nน่องไก่ 220 กิโลแคลลอรี',
         calorie: '710',
         price: 40,
         img: '1-kaosoy.jpg'),
     Noodle(
         id: 2,
         name: 'เส้นเล็กน้ำตกหมู',
-        material: 'เส้นเล็ก 140 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นเล็ก 140 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '540',
         price: 40,
         img: '2-leknamtok.jpg'),
     Noodle(
         id: 3,
         name: 'หมี่เหลืองน้ำใสหมู',
-        material: 'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '590',
         price: 40,
         img: '3-eggnamsai.jpg'),
     Noodle(
         id: 4,
         name: 'เส้นเล็กน้ำตกเนื้อ',
-        material: 'เส้นเล็ก 140 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nเนื้อวัว 250 กิโลแคลลอรี \nลูกชิ้นเนื้อ 180 กิโลแคลลอรี',
+        material:
+            'เส้นเล็ก 140 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nเนื้อวัว 250 กิโลแคลลอรี \nลูกชิ้นเนื้อ 180 กิโลแคลลอรี',
         calorie: '670',
         price: 50,
         img: '4-leknamtokcow.jpg'),
     Noodle(
         id: 5,
         name: 'หมี่เกี๊ยวหมูแดง',
-        material: 'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nเกี๊ยว 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nเกี๊ยว 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '840',
         price: 45,
         img: '5-Mheemoodaeng.jpg'),
     Noodle(
         id: 6,
         name: 'หมี่เกี๊ยวหมูแดงต้มยำ',
-        material: 'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nเกี๊ยว 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nเกี๊ยว 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '1030',
         price: 50,
         img: '6-Mheemoodaeng-tomyum.jpg'),
     Noodle(
         id: 7,
         name: 'เส้นใหญ่ต้มยำ',
-        material: 'เส้นใหญ่ 180 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นใหญ่ 180 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '710',
         price: 40,
         img: '7-yaitomyum.jpg'),
     Noodle(
         id: 8,
         name: 'วุ้นเส้นต้มยำ',
-        material: 'วุ้นเส้น 160 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'วุ้นเส้น 160 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '690',
         price: 40,
         img: '8-woonsentomyum.jpg'),
     Noodle(
         id: 9,
         name: 'หมี่หยกต้มยำ',
-        material: 'เส้นหมี่หยก 180 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nเกี๊ยว 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นหมี่หยก 180 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nเกี๊ยว 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '960',
         price: 50,
         img: '9-jadetomyum.jpg'),
     Noodle(
         id: 10,
         name: 'หมี่เหลืองน้ำตกหมู',
-        material: 'เส้นหมี่เหลีอง 250 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        material:
+            'เส้นหมี่เหลีอง 250 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
         calorie: '650',
         price: 40,
         img: '10-enggtomyummoo.jpg'),
@@ -262,17 +272,25 @@ class _HomePageState extends State<HomePage> {
                               child: ListTile(
                                 title: Text(
                                     style: GoogleFonts.sarabun(
-                                      fontSize: 16,
+                                      fontSize: 18,
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
                                     noodle[index].name),
                                 subtitle: Text(
                                     style: GoogleFonts.sarabun(
-                                      fontSize: 14,
+                                      fontSize: 16,
                                       color: Colors.black,
                                     ),
-                                    'แคลลอรี : ${noodle[index].calorie} กิโลแคลอรี'),
+                                    'แคลลอรี : ${noodle[index].calorie} กิโลแคลอรี \nราคา : ${noodle[index].price} บาท'),
+                                trailing: Text(
+                                  '>> ดูเพิ่มเติม <<',
+                                  style: GoogleFonts.sarabun(
+                                    fontSize: 12,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                ),
                                 leading: CircleAvatar(
                                   backgroundImage: AssetImage(
                                       'assets/noodle/${noodle[index].img}'),
@@ -354,6 +372,65 @@ class _GlowingBorderState extends State<GlowingBorder>
   }
 }
 
+class BlinkingText extends StatefulWidget {
+  final String text;
+  final Color color1;
+  final Color color2;
+
+  const BlinkingText({
+    required this.text,
+    required this.color1,
+    required this.color2,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  _BlinkingTextState createState() => _BlinkingTextState();
+}
+
+class _BlinkingTextState extends State<BlinkingText>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1), // ระยะเวลา 1 วินาที
+    )..repeat(reverse: true); // สลับไปมาอย่างต่อเนื่อง
+
+    _colorAnimation = ColorTween(
+      begin: widget.color1,
+      end: widget.color2,
+    ).animate(_controller);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose(); // ปิด AnimationController เมื่อ Widget ถูกลบ
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _colorAnimation,
+      builder: (context, child) {
+        return Text(
+          widget.text,
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: _colorAnimation.value,
+          ),
+        );
+      },
+    );
+  }
+}
+
 class Pagedetail extends StatefulWidget {
   Pagedetail(
       {super.key,
@@ -386,183 +463,193 @@ class _Pagedetail extends State<Pagedetail> {
     late int price = args.price!;
     late String img = args.img!;
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 50, 50, 50),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/bg/noodle.jpg"),
+            image: AssetImage("assets/bg/back3.jpg"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 25,
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: Column(
                     children: [
-                      SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 185, 186, 185)
-                                  .withOpacity(0.8),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.arrow_back_sharp,
-                              color: Colors.black,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            width: 50,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(255, 185, 186, 185)
+                                          .withOpacity(0.8),
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.arrow_back_sharp,
+                                  color: Colors.black,
+                                ),
+                                onPressed: () => Navigator.pop(context),
+                              ),
                             ),
-                            onPressed: () => Navigator.pop(context),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Container(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  'รายละเอียดของเมนู',
-                  style: GoogleFonts.sarabun(
-                    fontSize: 25,
-                    color: Colors.black,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.6),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'รายละเอียดของเมนู',
+                      style: GoogleFonts.sarabun(
+                        fontSize: 25,
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              height: 240,
-              width: 380,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
-                  image: AssetImage("assets/noodle/$img"),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              height: 400,
-              width: 380,
-              decoration: BoxDecoration(color: Colors.white.withOpacity(0.8)),
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 10, top: 10),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'ชื่อเมนู',
-                              style: GoogleFonts.sarabun(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              name,
-                              style: GoogleFonts.sarabun(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              'ส่วนประกอบ',
-                              style: GoogleFonts.sarabun(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Row(
-                            children: [
-                              Text(
-                                material,
-                                style: GoogleFonts.sarabun(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              'แคลลอรี',
-                              style: GoogleFonts.sarabun(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              '$calorie กิโลแคลลอรี',
-                              style: GoogleFonts.sarabun(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              'ราคา',
-                              style: GoogleFonts.sarabun(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              '$price บาท',
-                              style: GoogleFonts.sarabun(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  height: 240,
+                  width: 380,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.7),
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                      image: AssetImage("assets/noodle/$img"),
                     ),
-                  )
-                ],
-              ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
+                  height: 350,
+                  width: 380,
+                  decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.8),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 10, top: 10),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'ชื่อเมนู',
+                                  style: GoogleFonts.sarabun(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  name,
+                                  style: GoogleFonts.sarabun(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              children: [
+                                Text(
+                                  'ส่วนประกอบ',
+                                  style: GoogleFonts.sarabun(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    material,
+                                    style: GoogleFonts.sarabun(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              children: [
+                                Text(
+                                  'แคลลอรี',
+                                  style: GoogleFonts.sarabun(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  '$calorie กิโลแคลลอรี',
+                                  style: GoogleFonts.sarabun(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              children: [
+                                Text(
+                                  'ราคา',
+                                  style: GoogleFonts.sarabun(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  '$price บาท',
+                                  style: GoogleFonts.sarabun(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

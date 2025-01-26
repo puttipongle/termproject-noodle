@@ -34,6 +34,7 @@ class _CalculatorcalState extends State<Calculatorcal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 28, 26, 30),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -41,409 +42,413 @@ class _CalculatorcalState extends State<Calculatorcal> {
             fit: BoxFit.cover,
           ),
         ),
-        child:Column(
-          children: [
-            Header(),
-            Container(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+        child:SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Header(),
+                Container(
+                    padding: EdgeInsets.only(top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
                       children: [
-                        Column(
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            //ส่วนของการเลือกเส้น
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton2<String>(
-                                  isExpanded: true,
-                                  hint: Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.menu_open,
-                                        size: 30,
-                                        color: Colors.black,
-                                      ),
-                                      const SizedBox(
-                                        width: 4,
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          'เลือกเส้น',
-                                          style: GoogleFonts.sarabun(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  items: items
-                                      .map((String item) =>
-                                          DropdownMenuItem<String>(
-                                            value: item,
+                            Column(
+                              children: [
+                                //ส่วนของการเลือกเส้น
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: DropdownButtonHideUnderline(
+                                    child: DropdownButton2<String>(
+                                      isExpanded: true,
+                                      hint: Row(
+                                        children: [
+                                          const Icon(
+                                            Icons.menu_open,
+                                            size: 30,
+                                            color: Colors.black,
+                                          ),
+                                          const SizedBox(
+                                            width: 4,
+                                          ),
+                                          Expanded(
                                             child: Text(
-                                              item,
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                              ),
+                                              'เลือกเส้น',
+                                              style: GoogleFonts.sarabun(
+                                                  fontSize: 20,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold),
                                               overflow: TextOverflow.ellipsis,
                                             ),
-                                          ))
-                                      .toList(),
-                                  value: selectedValue,
-                                  onChanged: (String? value) {
-                                    setState(() {
-                                      selectedValue = value;
-                                    });
-                                  },
-                                  buttonStyleData: ButtonStyleData(
-                                    height: 50,
-                                    width: 320,
-                                    padding: const EdgeInsets.only(
-                                        left: 14, right: 14),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      border: Border.all(
-                                        color: Colors.black26,
+                                          ),
+                                        ],
                                       ),
-                                      color: Colors.grey,
-                                    ),
-                                    elevation: 2,
-                                  ),
-                                  iconStyleData: const IconStyleData(
-                                    icon: Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                    ),
-                                    iconSize: 14,
-                                    iconEnabledColor: Colors.black,
-                                    iconDisabledColor: Colors.grey,
-                                  ),
-                                  dropdownStyleData: DropdownStyleData(
-                                    maxHeight: 200,
-                                    width: 320,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      color: Colors.grey,
-                                    ),
-                                    offset: const Offset(0, 0),
-                                    scrollbarTheme: ScrollbarThemeData(
-                                      radius: const Radius.circular(40),
-                                      thickness:
-                                          WidgetStateProperty.all<double>(6),
-                                      thumbVisibility:
-                                          WidgetStateProperty.all<bool>(true),
-                                    ),
-                                  ),
-                                  menuItemStyleData: const MenuItemStyleData(
-                                    height: 40,
-                                    padding:
-                                        EdgeInsets.only(left: 14, right: 14),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            //ส่วนของการเลือกน้ำซุป
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton2<String>(
-                                  isExpanded: true,
-                                  hint: Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.menu_open,
-                                        size: 30,
-                                        color: Colors.black,
+                                      items: items
+                                          .map((String item) =>
+                                              DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ))
+                                          .toList(),
+                                      value: selectedValue,
+                                      onChanged: (String? value) {
+                                        setState(() {
+                                          selectedValue = value;
+                                        });
+                                      },
+                                      buttonStyleData: ButtonStyleData(
+                                        height: 50,
+                                        width: 320,
+                                        padding: const EdgeInsets.only(
+                                            left: 14, right: 14),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          border: Border.all(
+                                            color: Colors.black26,
+                                          ),
+                                          color: Colors.grey,
+                                        ),
+                                        elevation: 2,
                                       ),
-                                      const SizedBox(
-                                        width: 4,
+                                      iconStyleData: const IconStyleData(
+                                        icon: Icon(
+                                          Icons.arrow_forward_ios_outlined,
+                                        ),
+                                        iconSize: 14,
+                                        iconEnabledColor: Colors.black,
+                                        iconDisabledColor: Colors.grey,
                                       ),
-                                      Expanded(
-                                        child: Text(
-                                          'เลือกน้ำซุป',
-                                          style: GoogleFonts.sarabun(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                          overflow: TextOverflow.ellipsis,
+                                      dropdownStyleData: DropdownStyleData(
+                                        maxHeight: 200,
+                                        width: 320,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          color: Colors.grey,
+                                        ),
+                                        offset: const Offset(0, 0),
+                                        scrollbarTheme: ScrollbarThemeData(
+                                          radius: const Radius.circular(40),
+                                          thickness:
+                                              WidgetStateProperty.all<double>(6),
+                                          thumbVisibility:
+                                              WidgetStateProperty.all<bool>(true),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                  items: items
-                                      .map((String item) =>
-                                          DropdownMenuItem<String>(
-                                            value: item,
-                                            child: Text(
-                                              item,
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                              ),
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ))
-                                      .toList(),
-                                  value: selectedValue,
-                                  onChanged: (String? value) {
-                                    setState(() {
-                                      selectedValue = value;
-                                    });
-                                  },
-                                  buttonStyleData: ButtonStyleData(
-                                    height: 50,
-                                    width: 320,
-                                    padding: const EdgeInsets.only(
-                                        left: 14, right: 14),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      border: Border.all(
-                                        color: Colors.black26,
+                                      menuItemStyleData: const MenuItemStyleData(
+                                        height: 40,
+                                        padding:
+                                            EdgeInsets.only(left: 14, right: 14),
                                       ),
-                                      color: Colors.grey,
                                     ),
-                                    elevation: 2,
-                                  ),
-                                  iconStyleData: const IconStyleData(
-                                    icon: Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                    ),
-                                    iconSize: 14,
-                                    iconEnabledColor: Colors.black,
-                                    iconDisabledColor: Colors.grey,
-                                  ),
-                                  dropdownStyleData: DropdownStyleData(
-                                    maxHeight: 200,
-                                    width: 320,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      color: Colors.grey,
-                                    ),
-                                    offset: const Offset(0, 0),
-                                    scrollbarTheme: ScrollbarThemeData(
-                                      radius: const Radius.circular(40),
-                                      thickness:
-                                          WidgetStateProperty.all<double>(6),
-                                      thumbVisibility:
-                                          WidgetStateProperty.all<bool>(true),
-                                    ),
-                                  ),
-                                  menuItemStyleData: const MenuItemStyleData(
-                                    height: 40,
-                                    padding:
-                                        EdgeInsets.only(left: 14, right: 14),
                                   ),
                                 ),
-                              ),
-                            ),
-                            //ส่วนของการเลือกเนื้อสัตว์
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton2<String>(
-                                  isExpanded: true,
-                                  hint: Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.menu_open,
-                                        size: 30,
-                                        color: Colors.black,
+                                //ส่วนของการเลือกน้ำซุป
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: DropdownButtonHideUnderline(
+                                    child: DropdownButton2<String>(
+                                      isExpanded: true,
+                                      hint: Row(
+                                        children: [
+                                          const Icon(
+                                            Icons.menu_open,
+                                            size: 30,
+                                            color: Colors.black,
+                                          ),
+                                          const SizedBox(
+                                            width: 4,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'เลือกน้ำซุป',
+                                              style: GoogleFonts.sarabun(
+                                                  fontSize: 20,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      const SizedBox(
-                                        width: 4,
+                                      items: items
+                                          .map((String item) =>
+                                              DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ))
+                                          .toList(),
+                                      value: selectedValue,
+                                      onChanged: (String? value) {
+                                        setState(() {
+                                          selectedValue = value;
+                                        });
+                                      },
+                                      buttonStyleData: ButtonStyleData(
+                                        height: 50,
+                                        width: 320,
+                                        padding: const EdgeInsets.only(
+                                            left: 14, right: 14),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          border: Border.all(
+                                            color: Colors.black26,
+                                          ),
+                                          color: Colors.grey,
+                                        ),
+                                        elevation: 2,
                                       ),
-                                      Expanded(
-                                        child: Text(
-                                          'เลือกเนื้อสัตว์',
-                                          style: GoogleFonts.sarabun(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                          overflow: TextOverflow.ellipsis,
+                                      iconStyleData: const IconStyleData(
+                                        icon: Icon(
+                                          Icons.arrow_forward_ios_outlined,
+                                        ),
+                                        iconSize: 14,
+                                        iconEnabledColor: Colors.black,
+                                        iconDisabledColor: Colors.grey,
+                                      ),
+                                      dropdownStyleData: DropdownStyleData(
+                                        maxHeight: 200,
+                                        width: 320,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          color: Colors.grey,
+                                        ),
+                                        offset: const Offset(0, 0),
+                                        scrollbarTheme: ScrollbarThemeData(
+                                          radius: const Radius.circular(40),
+                                          thickness:
+                                              WidgetStateProperty.all<double>(6),
+                                          thumbVisibility:
+                                              WidgetStateProperty.all<bool>(true),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                  items: items
-                                      .map((String item) =>
-                                          DropdownMenuItem<String>(
-                                            value: item,
-                                            child: Text(
-                                              item,
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                              ),
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ))
-                                      .toList(),
-                                  value: selectedValue,
-                                  onChanged: (String? value) {
-                                    setState(() {
-                                      selectedValue = value;
-                                    });
-                                  },
-                                  buttonStyleData: ButtonStyleData(
-                                    height: 50,
-                                    width: 320,
-                                    padding: const EdgeInsets.only(
-                                        left: 14, right: 14),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      border: Border.all(
-                                        color: Colors.black26,
+                                      menuItemStyleData: const MenuItemStyleData(
+                                        height: 40,
+                                        padding:
+                                            EdgeInsets.only(left: 14, right: 14),
                                       ),
-                                      color: Colors.grey,
                                     ),
-                                    elevation: 2,
-                                  ),
-                                  iconStyleData: const IconStyleData(
-                                    icon: Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                    ),
-                                    iconSize: 14,
-                                    iconEnabledColor: Colors.black,
-                                    iconDisabledColor: Colors.grey,
-                                  ),
-                                  dropdownStyleData: DropdownStyleData(
-                                    maxHeight: 200,
-                                    width: 320,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      color: Colors.grey,
-                                    ),
-                                    offset: const Offset(0, 0),
-                                    scrollbarTheme: ScrollbarThemeData(
-                                      radius: const Radius.circular(40),
-                                      thickness:
-                                          WidgetStateProperty.all<double>(6),
-                                      thumbVisibility:
-                                          WidgetStateProperty.all<bool>(true),
-                                    ),
-                                  ),
-                                  menuItemStyleData: const MenuItemStyleData(
-                                    height: 40,
-                                    padding:
-                                        EdgeInsets.only(left: 14, right: 14),
                                   ),
                                 ),
-                              ),
-                            ),
-                            //ส่วนของการเลือกลูกชิ้น
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton2<String>(
-                                  isExpanded: true,
-                                  hint: Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.menu_open,
-                                        size: 30,
-                                        color: Colors.black,
+                                //ส่วนของการเลือกเนื้อสัตว์
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: DropdownButtonHideUnderline(
+                                    child: DropdownButton2<String>(
+                                      isExpanded: true,
+                                      hint: Row(
+                                        children: [
+                                          const Icon(
+                                            Icons.menu_open,
+                                            size: 30,
+                                            color: Colors.black,
+                                          ),
+                                          const SizedBox(
+                                            width: 4,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'เลือกเนื้อสัตว์',
+                                              style: GoogleFonts.sarabun(
+                                                  fontSize: 20,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      const SizedBox(
-                                        width: 4,
+                                      items: items
+                                          .map((String item) =>
+                                              DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ))
+                                          .toList(),
+                                      value: selectedValue,
+                                      onChanged: (String? value) {
+                                        setState(() {
+                                          selectedValue = value;
+                                        });
+                                      },
+                                      buttonStyleData: ButtonStyleData(
+                                        height: 50,
+                                        width: 320,
+                                        padding: const EdgeInsets.only(
+                                            left: 14, right: 14),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          border: Border.all(
+                                            color: Colors.black26,
+                                          ),
+                                          color: Colors.grey,
+                                        ),
+                                        elevation: 2,
                                       ),
-                                      Expanded(
-                                        child: Text(
-                                          'เลือกลูกชิ้น',
-                                          style: GoogleFonts.sarabun(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                          overflow: TextOverflow.ellipsis,
+                                      iconStyleData: const IconStyleData(
+                                        icon: Icon(
+                                          Icons.arrow_forward_ios_outlined,
+                                        ),
+                                        iconSize: 14,
+                                        iconEnabledColor: Colors.black,
+                                        iconDisabledColor: Colors.grey,
+                                      ),
+                                      dropdownStyleData: DropdownStyleData(
+                                        maxHeight: 200,
+                                        width: 320,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          color: Colors.grey,
+                                        ),
+                                        offset: const Offset(0, 0),
+                                        scrollbarTheme: ScrollbarThemeData(
+                                          radius: const Radius.circular(40),
+                                          thickness:
+                                              WidgetStateProperty.all<double>(6),
+                                          thumbVisibility:
+                                              WidgetStateProperty.all<bool>(true),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                  items: items
-                                      .map((String item) =>
-                                          DropdownMenuItem<String>(
-                                            value: item,
-                                            child: Text(
-                                              item,
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                              ),
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ))
-                                      .toList(),
-                                  value: selectedValue,
-                                  onChanged: (String? value) {
-                                    setState(() {
-                                      selectedValue = value;
-                                    });
-                                  },
-                                  buttonStyleData: ButtonStyleData(
-                                    height: 50,
-                                    width: 320,
-                                    padding: const EdgeInsets.only(
-                                        left: 14, right: 14),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      border: Border.all(
-                                        color: Colors.black26,
+                                      menuItemStyleData: const MenuItemStyleData(
+                                        height: 40,
+                                        padding:
+                                            EdgeInsets.only(left: 14, right: 14),
                                       ),
-                                      color: Colors.grey,
                                     ),
-                                    elevation: 2,
-                                  ),
-                                  iconStyleData: const IconStyleData(
-                                    icon: Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                    ),
-                                    iconSize: 14,
-                                    iconEnabledColor: Colors.black,
-                                    iconDisabledColor: Colors.grey,
-                                  ),
-                                  dropdownStyleData: DropdownStyleData(
-                                    maxHeight: 200,
-                                    width: 320,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14),
-                                      color: Colors.grey,
-                                    ),
-                                    offset: const Offset(0, 0),
-                                    scrollbarTheme: ScrollbarThemeData(
-                                      radius: const Radius.circular(40),
-                                      thickness:
-                                          WidgetStateProperty.all<double>(6),
-                                      thumbVisibility:
-                                          WidgetStateProperty.all<bool>(true),
-                                    ),
-                                  ),
-                                  menuItemStyleData: const MenuItemStyleData(
-                                    height: 40,
-                                    padding:
-                                        EdgeInsets.only(left: 14, right: 14),
                                   ),
                                 ),
-                              ),
+                                //ส่วนของการเลือกลูกชิ้น
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: DropdownButtonHideUnderline(
+                                    child: DropdownButton2<String>(
+                                      isExpanded: true,
+                                      hint: Row(
+                                        children: [
+                                          const Icon(
+                                            Icons.menu_open,
+                                            size: 30,
+                                            color: Colors.black,
+                                          ),
+                                          const SizedBox(
+                                            width: 4,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'เลือกลูกชิ้น',
+                                              style: GoogleFonts.sarabun(
+                                                  fontSize: 20,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      items: items
+                                          .map((String item) =>
+                                              DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ))
+                                          .toList(),
+                                      value: selectedValue,
+                                      onChanged: (String? value) {
+                                        setState(() {
+                                          selectedValue = value;
+                                        });
+                                      },
+                                      buttonStyleData: ButtonStyleData(
+                                        height: 50,
+                                        width: 320,
+                                        padding: const EdgeInsets.only(
+                                            left: 14, right: 14),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          border: Border.all(
+                                            color: Colors.black26,
+                                          ),
+                                          color: Colors.grey,
+                                        ),
+                                        elevation: 2,
+                                      ),
+                                      iconStyleData: const IconStyleData(
+                                        icon: Icon(
+                                          Icons.arrow_forward_ios_outlined,
+                                        ),
+                                        iconSize: 14,
+                                        iconEnabledColor: Colors.black,
+                                        iconDisabledColor: Colors.grey,
+                                      ),
+                                      dropdownStyleData: DropdownStyleData(
+                                        maxHeight: 200,
+                                        width: 320,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(14),
+                                          color: Colors.grey,
+                                        ),
+                                        offset: const Offset(0, 0),
+                                        scrollbarTheme: ScrollbarThemeData(
+                                          radius: const Radius.circular(40),
+                                          thickness:
+                                              WidgetStateProperty.all<double>(6),
+                                          thumbVisibility:
+                                              WidgetStateProperty.all<bool>(true),
+                                        ),
+                                      ),
+                                      menuItemStyleData: const MenuItemStyleData(
+                                        height: 40,
+                                        padding:
+                                            EdgeInsets.only(left: 14, right: 14),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ],
-                    ),
-                  ],
-                )),
-            ResultSection(),
-          ],
+                    )),
+                ResultSection(),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -525,6 +530,7 @@ class ResultSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 20),
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
