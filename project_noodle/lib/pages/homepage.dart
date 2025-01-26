@@ -372,65 +372,6 @@ class _GlowingBorderState extends State<GlowingBorder>
   }
 }
 
-class BlinkingText extends StatefulWidget {
-  final String text;
-  final Color color1;
-  final Color color2;
-
-  const BlinkingText({
-    required this.text,
-    required this.color1,
-    required this.color2,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  _BlinkingTextState createState() => _BlinkingTextState();
-}
-
-class _BlinkingTextState extends State<BlinkingText>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<Color?> _colorAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1), // ระยะเวลา 1 วินาที
-    )..repeat(reverse: true); // สลับไปมาอย่างต่อเนื่อง
-
-    _colorAnimation = ColorTween(
-      begin: widget.color1,
-      end: widget.color2,
-    ).animate(_controller);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose(); // ปิด AnimationController เมื่อ Widget ถูกลบ
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _colorAnimation,
-      builder: (context, child) {
-        return Text(
-          widget.text,
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: _colorAnimation.value,
-          ),
-        );
-      },
-    );
-  }
-}
-
 class Pagedetail extends StatefulWidget {
   Pagedetail(
       {super.key,
