@@ -18,69 +18,93 @@ class HomePage extends StatefulWidget {
 }
 
 class Noodle {
+  late int id;
   late String name;
   late String material;
   late String calorie;
+  late int price;
   late String img;
 
   Noodle(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.material,
       required this.calorie,
+      required this.price,
       required this.img});
 }
 
 class _HomePageState extends State<HomePage> {
   List<Noodle> noodle = [
     Noodle(
+        id: 1,
         name: 'ข้าวซอยไก่',
-        material: 'เส้นข้าวซอย น่องไก่',
+        material: 'เส้นข้าวซอย 240 กิโลแคลลอรี่ \nน้ำข้าวซอย 250 กิโลแคลลอรี่ \nน่องไก่ 220 กิโลแคลลอรี่',
         calorie: '710',
+        price: 40,
         img: '1-kaosoy.jpg'),
     Noodle(
+        id: 2,
         name: 'เส้นเล็กน้ำตกหมู',
         material: 'เส้นเล็ก หมูนุ่ม ลูกชิ้นหมู',
         calorie: '540',
+        price: 0,
         img: '2-leknamtok.jpg'),
     Noodle(
+        id: 3,
         name: 'หมี่เหลืองน้ำใสหมู',
         material: 'เส้นหมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
         calorie: '590',
+        price: 0,
         img: '3-eggnamsai.jpg'),
     Noodle(
+        id: 4,
         name: 'เส้นเล็กน้ำตกเนื้อ',
         material: 'เส้นเล็ก เนื้อวัว ลูกชิ้นเนื้อ',
         calorie: '670',
+        price: 0,
         img: '4-leknamtokcow.jpg'),
     Noodle(
+        id: 5,
         name: 'หมี่เกี๊ยวหมูแดง',
         material: 'หมี่เหลือง เกี๊ยว หมูแดง ลูกชิ้นหมู',
         calorie: '840',
+        price: 0,
         img: '5-Mheemoodaeng.jpg'),
     Noodle(
+        id: 6,
         name: 'หมี่เกี๊ยวหมูแดงต้มยำ',
         material: 'หมี่เหลือง เกี๊ยว หมูแดง หมูสับ ลูกชิ้นหมู',
         calorie: '1030',
+        price: 0,
         img: '6-Mheemoodaeng-tomyum.jpg'),
     Noodle(
+        id: 7,
         name: 'เส้นใหญ่ต้มยำ',
         material: 'เส้นใหญ่ หมูนุ่ม หมูสับ ลูกชิ้นหมู',
         calorie: '710',
+        price: 0,
         img: '7-yaitomyum.jpg'),
     Noodle(
+        id: 8,
         name: 'วุ้นเส้นต้มยำ',
         material: 'วุ้นเส้น หมูนุ่ม หมูสับ ลูกชิ้นหมู',
         calorie: '690',
+        price: 0,
         img: '8-woonsentomyum.jpg'),
     Noodle(
+        id: 9,
         name: 'หมี่หยกต้มยำ',
         material: 'หมี่หยก เกี๊ยว หมูแดง ลูกชิ้นหมู',
         calorie: '960',
+        price: 0,
         img: '9-jadetomyum.jpg'),
     Noodle(
+        id: 10,
         name: 'หมี่เหลืองน้ำตกหมู',
         material: 'หมี่เหลือง หมูนุ่ม ลูกชิ้นหมู',
         calorie: '650',
+        price: 0,
         img: '10-enggtomyummoo.jpg'),
   ];
 
@@ -137,64 +161,61 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ])),
-            Container(
-              child: Column(
-                children: [
-                  SizedBox(
-                    child: Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20)),
-                          color: Colors.black.withOpacity(0.2)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                context,
-                                '/Calculator',
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 116, 231, 77),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              padding: const EdgeInsets.symmetric(vertical: 12),
-                              minimumSize: const Size(288, 56),
+            Column(
+              children: [
+                SizedBox(
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20)),
+                        color: Colors.black.withOpacity(0.2)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              '/Calculator',
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 116, 231, 77),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Container(
-                              padding: EdgeInsets.all(5),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Icon(
-                                    Icons.calculate,
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            minimumSize: const Size(288, 56),
+                          ),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(
+                                  Icons.calculate,
+                                  color: Colors.black,
+                                  size: 25,
+                                ),
+                                Text(
+                                  ' เครื่องคำนวณแคลลอรี ',
+                                  style: GoogleFonts.sriracha(
+                                    fontSize: 25,
                                     color: Colors.black,
-                                    size: 25,
                                   ),
-                                  Text(
-                                    ' เครื่องคำนวณแคลลอรี ',
-                                    style: GoogleFonts.sriracha(
-                                      fontSize: 25,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             Container(
               padding: EdgeInsets.only(top: 10, bottom: 10),
@@ -226,7 +247,17 @@ class _HomePageState extends State<HomePage> {
                       itemCount: noodle.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                            onTap: () {},
+                            onTap: () async {
+                              await Navigator.pushNamed(context, '/PageDetail',
+                                  arguments: Noodle(
+                                    id: noodle[index].id,
+                                    name: noodle[index].name,
+                                    material: noodle[index].material,
+                                    calorie: noodle[index].calorie,
+                                    price: noodle[index].price,
+                                    img: noodle[index].img,
+                                  ));
+                            },
                             child: Card(
                               child: ListTile(
                                 title: Text(
@@ -241,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                                       fontSize: 14,
                                       color: Colors.black,
                                     ),
-                                    'ส่วนประกอบ : ${noodle[index].material} \nแคลลอรี : ${noodle[index].calorie} กิโลแคลอรี'),
+                                    'แคลลอรี : ${noodle[index].calorie} กิโลแคลอรี'),
                                 leading: CircleAvatar(
                                   backgroundImage: AssetImage(
                                       'assets/noodle/${noodle[index].img}'),
@@ -319,6 +350,221 @@ class _GlowingBorderState extends State<GlowingBorder>
           child: widget.child,
         );
       },
+    );
+  }
+}
+
+class Pagedetail extends StatefulWidget {
+  Pagedetail(
+      {super.key,
+      required this.id,
+      required this.name,
+      required this.material,
+      required this.calorie,
+      required this.price,
+      required this.img});
+
+  late int id;
+  late String name;
+  late String material;
+  late String calorie;
+  late int price;
+  late String img;
+
+  @override
+  State<Pagedetail> createState() => _Pagedetail();
+}
+
+class _Pagedetail extends State<Pagedetail> {
+  @override
+  Widget build(BuildContext context) {
+    var args = ModalRoute.of(context)!.settings.arguments as Noodle;
+    late int id = args.id!;
+    late String name = args.name!;
+    late String material = args.material!;
+    late String calorie = args.calorie!;
+    late int price = args.price!;
+    late String img = args.img!;
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/bg/noodle.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 25,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 50,
+                        width: 50,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 185, 186, 185)
+                                  .withOpacity(0.8),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back_sharp,
+                              color: Colors.black,
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.6),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'รายละเอียดของเมนู',
+                  style: GoogleFonts.sarabun(
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              height: 240,
+              width: 380,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                  image: AssetImage("assets/noodle/$img"),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              height: 400,
+              width: 380,
+              decoration: BoxDecoration(color: Colors.white.withOpacity(0.8)),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 10, top: 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'ชื่อเมนู',
+                              style: GoogleFonts.sarabun(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              name,
+                              style: GoogleFonts.sarabun(
+                                fontSize: 20,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          children: [
+                            Text(
+                              'ส่วนประกอบ',
+                              style: GoogleFonts.sarabun(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Row(
+                            children: [
+                              Text(
+                                material,
+                                style: GoogleFonts.sarabun(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          children: [
+                            Text(
+                              'แคลลอรี',
+                              style: GoogleFonts.sarabun(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              '$calorie กิโลแคลลอรี',
+                              style: GoogleFonts.sarabun(
+                                fontSize: 20,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          children: [
+                            Text(
+                              'ราคา',
+                              style: GoogleFonts.sarabun(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              '$price บาท',
+                              style: GoogleFonts.sarabun(
+                                fontSize: 20,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

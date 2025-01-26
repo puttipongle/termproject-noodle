@@ -8,11 +8,11 @@ import 'package:device_preview_plus/device_preview_plus.dart';
 // }
 
 void main() => runApp(
-  DevicePreview(
-    enabled: true,
-    builder: (context) => MyApp(), // Wrap your app
-  ),
-);
+      DevicePreview(
+        enabled: true,
+        builder: (context) => MyApp(), // Wrap your app
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,9 +25,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const HomePage(),
-       '/Calculator': (context) => Calculatorcal()
+        '/Calculator': (context) => Calculatorcal(),
+        '/PageDetail': (context) => Pagedetail(
+              id: 0,
+              name: '',
+              material: '',
+              calorie: '',
+              price: 0,
+              img: '',
+            )
       },
     );
   }
 }
-
