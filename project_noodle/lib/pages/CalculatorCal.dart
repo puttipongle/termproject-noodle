@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../services/calorie_calculator.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -31,6 +32,16 @@ final List<String> items = [
 String? selectedValue;
 
 class _CalculatorcalState extends State<Calculatorcal> {
+  String selectedMenuId = "ไม่ใส่น้ำซุป";
+  String selectedNoodle = "ไม่ใส่เส้น";
+  String selectedMeat = "ไม่ใส่เนื้อ";
+  String selectedMeatball = "ไม่ใส่ลูกชิ้น";
+  int totalCalories = 0; // ตัวแปรเก็บแคลอรีที่คำนวณได้
+
+  List<String> menuItems = CalorieCalculator.mockMenu.keys.toList();
+  List<String> noodleOptions = CalorieCalculator.mockNoodles.keys.toList();
+  List<String> MeatOptions = CalorieCalculator.mockMeat.keys.toList();
+  List<String> MeatballOptions = CalorieCalculator.mockMeatballs.keys.toList();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +53,7 @@ class _CalculatorcalState extends State<Calculatorcal> {
             fit: BoxFit.cover,
           ),
         ),
-        child:SafeArea(
+        child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -87,26 +98,29 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                           ),
                                         ],
                                       ),
-                                      items: items
-                                          .map((String item) =>
+                                      items: noodleOptions
+                                          .map((noodle) =>
                                               DropdownMenuItem<String>(
-                                                value: item,
+                                                value: noodle,
                                                 child: Text(
-                                                  item,
+                                                  noodle,
                                                   style: const TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black,
                                                   ),
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ))
                                           .toList(),
-                                      value: selectedValue,
+                                      value: selectedNoodle,
                                       onChanged: (String? value) {
-                                        setState(() {
-                                          selectedValue = value;
-                                        });
+                                        if (value != null) {
+                                          setState(() {
+                                            selectedNoodle = value;
+                                          });
+                                        }
                                       },
                                       buttonStyleData: ButtonStyleData(
                                         height: 50,
@@ -114,7 +128,8 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         padding: const EdgeInsets.only(
                                             left: 14, right: 14),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           border: Border.all(
                                             color: Colors.black26,
                                           ),
@@ -134,22 +149,26 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         maxHeight: 200,
                                         width: 320,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           color: Colors.grey,
                                         ),
                                         offset: const Offset(0, 0),
                                         scrollbarTheme: ScrollbarThemeData(
                                           radius: const Radius.circular(40),
                                           thickness:
-                                              WidgetStateProperty.all<double>(6),
+                                              WidgetStateProperty.all<double>(
+                                                  6),
                                           thumbVisibility:
-                                              WidgetStateProperty.all<bool>(true),
+                                              WidgetStateProperty.all<bool>(
+                                                  true),
                                         ),
                                       ),
-                                      menuItemStyleData: const MenuItemStyleData(
+                                      menuItemStyleData:
+                                          const MenuItemStyleData(
                                         height: 40,
-                                        padding:
-                                            EdgeInsets.only(left: 14, right: 14),
+                                        padding: EdgeInsets.only(
+                                            left: 14, right: 14),
                                       ),
                                     ),
                                   ),
@@ -182,26 +201,29 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                           ),
                                         ],
                                       ),
-                                      items: items
-                                          .map((String item) =>
+                                      items: menuItems
+                                          .map((String menuItems) =>
                                               DropdownMenuItem<String>(
-                                                value: item,
+                                                value: menuItems,
                                                 child: Text(
-                                                  item,
+                                                  menuItems,
                                                   style: const TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black,
                                                   ),
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ))
                                           .toList(),
-                                      value: selectedValue,
+                                      value: selectedMenuId,
                                       onChanged: (String? value) {
-                                        setState(() {
-                                          selectedValue = value;
-                                        });
+                                        if (value != null) {
+                                          setState(() {
+                                            selectedMenuId = value;
+                                          });
+                                        }
                                       },
                                       buttonStyleData: ButtonStyleData(
                                         height: 50,
@@ -209,7 +231,8 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         padding: const EdgeInsets.only(
                                             left: 14, right: 14),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           border: Border.all(
                                             color: Colors.black26,
                                           ),
@@ -229,22 +252,26 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         maxHeight: 200,
                                         width: 320,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           color: Colors.grey,
                                         ),
                                         offset: const Offset(0, 0),
                                         scrollbarTheme: ScrollbarThemeData(
                                           radius: const Radius.circular(40),
                                           thickness:
-                                              WidgetStateProperty.all<double>(6),
+                                              WidgetStateProperty.all<double>(
+                                                  6),
                                           thumbVisibility:
-                                              WidgetStateProperty.all<bool>(true),
+                                              WidgetStateProperty.all<bool>(
+                                                  true),
                                         ),
                                       ),
-                                      menuItemStyleData: const MenuItemStyleData(
+                                      menuItemStyleData:
+                                          const MenuItemStyleData(
                                         height: 40,
-                                        padding:
-                                            EdgeInsets.only(left: 14, right: 14),
+                                        padding: EdgeInsets.only(
+                                            left: 14, right: 14),
                                       ),
                                     ),
                                   ),
@@ -277,26 +304,26 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                           ),
                                         ],
                                       ),
-                                      items: items
-                                          .map((String item) =>
-                                              DropdownMenuItem<String>(
-                                                value: item,
-                                                child: Text(
-                                                  item,
-                                                  style: const TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black,
-                                                  ),
-                                                  overflow: TextOverflow.ellipsis,
-                                                ),
-                                              ))
-                                          .toList(),
-                                      value: selectedValue,
-                                      onChanged: (String? value) {
-                                        setState(() {
-                                          selectedValue = value;
-                                        });
+                                      items: MeatOptions.map((String item) =>
+                                          DropdownMenuItem<String>(
+                                            value: item,
+                                            child: Text(
+                                              item,
+                                              style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          )).toList(),
+                                      value: selectedMeat,
+                                      onChanged: (value) {
+                                        if (value != null) {
+                                          setState(() {
+                                            selectedMeat = value;
+                                          });
+                                        }
                                       },
                                       buttonStyleData: ButtonStyleData(
                                         height: 50,
@@ -304,7 +331,8 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         padding: const EdgeInsets.only(
                                             left: 14, right: 14),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           border: Border.all(
                                             color: Colors.black26,
                                           ),
@@ -324,22 +352,26 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         maxHeight: 200,
                                         width: 320,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           color: Colors.grey,
                                         ),
                                         offset: const Offset(0, 0),
                                         scrollbarTheme: ScrollbarThemeData(
                                           radius: const Radius.circular(40),
                                           thickness:
-                                              WidgetStateProperty.all<double>(6),
+                                              WidgetStateProperty.all<double>(
+                                                  6),
                                           thumbVisibility:
-                                              WidgetStateProperty.all<bool>(true),
+                                              WidgetStateProperty.all<bool>(
+                                                  true),
                                         ),
                                       ),
-                                      menuItemStyleData: const MenuItemStyleData(
+                                      menuItemStyleData:
+                                          const MenuItemStyleData(
                                         height: 40,
-                                        padding:
-                                            EdgeInsets.only(left: 14, right: 14),
+                                        padding: EdgeInsets.only(
+                                            left: 14, right: 14),
                                       ),
                                     ),
                                   ),
@@ -372,8 +404,8 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                           ),
                                         ],
                                       ),
-                                      items: items
-                                          .map((String item) =>
+                                      items: MeatballOptions.map(
+                                          (String item) =>
                                               DropdownMenuItem<String>(
                                                 value: item,
                                                 child: Text(
@@ -383,15 +415,17 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black,
                                                   ),
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
-                                              ))
-                                          .toList(),
-                                      value: selectedValue,
-                                      onChanged: (String? value) {
-                                        setState(() {
-                                          selectedValue = value;
-                                        });
+                                              )).toList(),
+                                      value: selectedMeatball,
+                                      onChanged: (value) {
+                                        if (value != null) {
+                                          setState(() {
+                                            selectedMeatball = value;
+                                          });
+                                        }
                                       },
                                       buttonStyleData: ButtonStyleData(
                                         height: 50,
@@ -399,7 +433,8 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         padding: const EdgeInsets.only(
                                             left: 14, right: 14),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           border: Border.all(
                                             color: Colors.black26,
                                           ),
@@ -419,22 +454,26 @@ class _CalculatorcalState extends State<Calculatorcal> {
                                         maxHeight: 200,
                                         width: 320,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                           color: Colors.grey,
                                         ),
                                         offset: const Offset(0, 0),
                                         scrollbarTheme: ScrollbarThemeData(
                                           radius: const Radius.circular(40),
                                           thickness:
-                                              WidgetStateProperty.all<double>(6),
+                                              WidgetStateProperty.all<double>(
+                                                  6),
                                           thumbVisibility:
-                                              WidgetStateProperty.all<bool>(true),
+                                              WidgetStateProperty.all<bool>(
+                                                  true),
                                         ),
                                       ),
-                                      menuItemStyleData: const MenuItemStyleData(
+                                      menuItemStyleData:
+                                          const MenuItemStyleData(
                                         height: 40,
-                                        padding:
-                                            EdgeInsets.only(left: 14, right: 14),
+                                        padding: EdgeInsets.only(
+                                            left: 14, right: 14),
                                       ),
                                     ),
                                   ),
@@ -452,6 +491,111 @@ class _CalculatorcalState extends State<Calculatorcal> {
         ),
       ),
     );
+  }
+
+  Widget ResultSection() {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.6),
+                borderRadius: BorderRadius.circular(20)),
+            child: Text(
+              'ส่วนประกอบที่เลือก',
+              style: GoogleFonts.sarabun(
+                fontSize: 26,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none, // ลบเส้นขีดใต้
+              ),
+            ),
+          ),
+          const SizedBox(height: 2),
+          Container(
+            //แสดงส่วนประกอบ
+            color: const Color(0xFFDCD6D6).withOpacity(0.8),
+            child: TextField(
+              controller: TextEditingController(
+                text: "เมนูที่เลือก: $selectedMenuId\n"
+                    "เนื้อที่เลือก: $selectedMeat\n"
+                    "ลูกชิ้นที่เลือก: $selectedMeatball\n"
+                    "เส้นที่เลือก: $selectedNoodle",
+              ),
+              maxLines: null, // ให้สามารถแสดงข้อความหลายบรรทัด
+              readOnly: true, // ไม่สามารถแก้ไขข้อความได้
+              decoration: InputDecoration(
+                border: InputBorder.none, // ไม่มีขอบ
+                hintText: 'กรุณาเลือกเมนู, เนื้อ, ลูกชิ้น และเส้น',
+              ),
+            ),
+          ),
+          const SizedBox(height: 2),
+          Container(
+            //แสดงผลลัพธ์
+            height: 50,
+            width: 200,
+            color: const Color(0xFFDCD6D6).withOpacity(0.8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'แคลอรีทั้งหมด:',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal,
+                  ),
+                ),
+                const SizedBox(height:2),
+                Text(
+                  '$totalCalories kcal', // แสดงแคลอรีที่คำนวณได้
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 2),
+          ElevatedButton(
+            onPressed: calculateCalories,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 52, 188, 43),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              minimumSize: const Size(150, 60),
+            ),
+            child: Text('คำนวณ',
+                style: GoogleFonts.sarabun(
+                  fontSize: 24,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.none,
+                )),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void calculateCalories() {
+    final totalCalories = CalorieCalculator.calculate(
+      selectedMenuId,
+      selectedNoodle,
+      selectedMeat,
+      selectedMeatball,
+    );
+
+    setState(() {
+      this.totalCalories = totalCalories;
+    });
   }
 }
 
@@ -520,70 +664,6 @@ class Header extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class ResultSection extends StatelessWidget {
-  const ResultSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 20),
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(20)),
-            child: Text(
-              'ส่วนประกอบที่เลือก',
-              style: GoogleFonts.sarabun(
-                fontSize: 26,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.none, // ลบเส้นขีดใต้
-              ),
-            ),
-          ),
-          const SizedBox(height: 2),
-          Container( //แสดงส่วนประกอบ
-            height: 80,
-            width: 400,
-            color: const Color(0xFFDCD6D6).withOpacity(0.8),
-          ),
-          const SizedBox(height: 2),
-          Container( //แสดงผลลัพธ์
-            height: 50,
-            width: 200,
-            color: const Color(0xFFDCD6D6).withOpacity(0.8),
-          ),
-          const SizedBox(height: 2),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 52, 188, 43),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              minimumSize: const Size(150, 60),
-            ),
-            child: Text(
-              'คำนวณ',
-              style: GoogleFonts.sarabun(
-                fontSize: 24,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.none,
-              )
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
