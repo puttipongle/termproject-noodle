@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -270,10 +272,9 @@ class _HomePageState extends State<HomePage> {
                                 trailing: Text(
                                   '>> ดูเพิ่มเติม <<',
                                   style: GoogleFonts.sarabun(
-                                    fontSize: 12,
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold
-                                  ),
+                                      fontSize: 12,
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 leading: CircleAvatar(
                                   backgroundImage: AssetImage(
@@ -564,6 +565,38 @@ class _Pagedetail extends State<Pagedetail> {
                                     color: Colors.black,
                                   ),
                                 ),
+                              ],
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              children: [
+                                Text(
+                                  'อ้างอิงข้อมูลจาก : lovefitt.com',
+                                  style: GoogleFonts.sarabun(
+                                      fontSize: 16,
+                                      color: const Color.fromARGB(255, 4, 92, 143),
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                RichText(
+                                    text: TextSpan(children: [
+                                  TextSpan(
+                                    text: " *Click here*",
+                                    style: GoogleFonts.sarabun(
+                                        fontSize: 14,
+                                        color: const Color.fromARGB(255, 255, 0, 0),
+                                        fontWeight: FontWeight.bold),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () async {
+                                        var url =
+                                            "https://www.lovefitt.com/calories-monitor/%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99/?utm_source=chatgpt.com";
+                                        if (await canLaunch(url)) {
+                                          await launch(url);
+                                        } else {
+                                          throw 'Could not launch $url';
+                                        }
+                                      },
+                                  ),
+                                ]))
                               ],
                             ),
                           ],

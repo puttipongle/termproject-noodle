@@ -516,20 +516,23 @@ class _CalculatorcalState extends State<Calculatorcal> {
           const SizedBox(height: 2),
           Container(
             //แสดงส่วนประกอบ
-            color: const Color(0xFFDCD6D6).withOpacity(0.8),
+            color: const Color(0xFFDCD6D6).withOpacity(0.9),
             child: TextField(
               controller: TextEditingController(
-                text:"  เส้น : $selectedNoodle\n"
-                 "  น้ำซุป : $selectedMenuId\n"
+                text: "  เส้น : $selectedNoodle\n"
+                    "  น้ำซุป : $selectedMenuId\n"
                     "  เนื้อสัตว์ : $selectedMeat\n"
-                    "  ลูกชิ้น : $selectedMeatball"
-                    ,
+                    "  ลูกชิ้น : $selectedMeatball",
               ),
               maxLines: null, // ให้สามารถแสดงข้อความหลายบรรทัด
               readOnly: true, // ไม่สามารถแก้ไขข้อความได้
               decoration: InputDecoration(
                 border: InputBorder.none, // ไม่มีขอบ
                 hintText: '  กรุณาเลือกเส้น, น้ำซุป, เนื้อสัตว์, ลูกชิ้น',
+                labelStyle: GoogleFonts.sarabun(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -550,7 +553,7 @@ class _CalculatorcalState extends State<Calculatorcal> {
                     color: Colors.teal,
                   ),
                 ),
-                const SizedBox(height:2),
+                const SizedBox(height: 2),
                 Text(
                   '  $totalCalories กิโลแคลลอรี', // แสดงแคลอรีที่คำนวณได้
                   style: const TextStyle(
