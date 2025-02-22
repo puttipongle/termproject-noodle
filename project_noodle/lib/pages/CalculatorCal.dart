@@ -519,43 +519,44 @@ class _CalculatorcalState extends State<Calculatorcal> {
             color: const Color(0xFFDCD6D6).withOpacity(0.8),
             child: TextField(
               controller: TextEditingController(
-                text: "เมนูที่เลือก: $selectedMenuId\n"
-                    "เนื้อที่เลือก: $selectedMeat\n"
-                    "ลูกชิ้นที่เลือก: $selectedMeatball\n"
-                    "เส้นที่เลือก: $selectedNoodle",
+                text:"  เส้น : $selectedNoodle\n"
+                 "  น้ำซุป : $selectedMenuId\n"
+                    "  เนื้อสัตว์ : $selectedMeat\n"
+                    "  ลูกชิ้น : $selectedMeatball"
+                    ,
               ),
               maxLines: null, // ให้สามารถแสดงข้อความหลายบรรทัด
               readOnly: true, // ไม่สามารถแก้ไขข้อความได้
               decoration: InputDecoration(
                 border: InputBorder.none, // ไม่มีขอบ
-                hintText: 'กรุณาเลือกเมนู, เนื้อ, ลูกชิ้น และเส้น',
+                hintText: '  กรุณาเลือกเส้น, น้ำซุป, เนื้อสัตว์, ลูกชิ้น',
               ),
             ),
           ),
           const SizedBox(height: 2),
           Container(
             //แสดงผลลัพธ์
-            height: 50,
+            height: 70,
             width: 200,
             color: const Color(0xFFDCD6D6).withOpacity(0.8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'แคลอรีทั้งหมด:',
+                  '  ผลรวมแคลลอรี:',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.teal,
                   ),
                 ),
                 const SizedBox(height:2),
                 Text(
-                  '$totalCalories kcal', // แสดงแคลอรีที่คำนวณได้
+                  '  $totalCalories กิโลแคลลอรี', // แสดงแคลอรีที่คำนวณได้
                   style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.teal,
+                    color: Colors.red,
                   ),
                 ),
               ],
@@ -573,7 +574,7 @@ class _CalculatorcalState extends State<Calculatorcal> {
               minimumSize: const Size(150, 60),
             ),
             child: Text('คำนวณ',
-                style: GoogleFonts.sarabun(
+                style: GoogleFonts.sriracha(
                   fontSize: 24,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

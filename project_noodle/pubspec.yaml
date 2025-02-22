@@ -67,16 +67,15 @@ flutter:
     - assets/bg/back3.jpg
     - assets/bg/thai-noodle.jpg
     - assets/bg/noodle.jpg
-    - assets/noodle/1-kaosoy.jpg
-    - assets/noodle/2-leknamtok.jpg
-    - assets/noodle/3-eggnamsai.jpg
-    - assets/noodle/4-leknamtokcow.jpg
-    - assets/noodle/5-Mheemoodaeng.jpg
-    - assets/noodle/6-Mheemoodaeng-tomyum.jpg
-    - assets/noodle/7-yaitomyum.jpg
-    - assets/noodle/8-woonsentomyum.jpg
-    - assets/noodle/9-jadetomyum.jpg
-    - assets/noodle/10-enggtomyummoo.jpg
+    - assets/noodle/1-glassnoodletomyum.jpg
+    - assets/noodle/2-mamanamsai.jpg
+    - assets/noodle/3-m_noodletomyum.jpg
+    - assets/noodle/4-ricenoodlenumsai.jpg
+    - assets/noodle/5-eggnoodletomyum.jpg
+    - assets/noodle/6-eggnoodlenamsai.png
+    - assets/noodle/7-thinnoodle-namtok.jpg
+    - assets/noodle/8-eggnoodletomyumnamtok.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

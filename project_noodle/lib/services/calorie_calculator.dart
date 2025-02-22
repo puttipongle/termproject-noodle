@@ -27,6 +27,7 @@ class CalorieCalculator {
   };
 
   static final Map<String, int> mockNoodles = {
+    "ไม่ใส่เส้น": 0,
     "เส้นหมี่เหลือง": 250,
     "เส้นหมี่หยก": 180,
     "เส้นใหญ่": 180,
@@ -34,7 +35,6 @@ class CalorieCalculator {
     "เส้นเล็ก": 140,
     "วุ้นเส้น": 100,
     "เส้นข้าวซอย": 240,
-    "ไม่ใส่เส้น": 0,
   };
 
   static int calculate(
