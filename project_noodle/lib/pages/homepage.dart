@@ -1,7 +1,7 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -42,56 +42,56 @@ class _HomePageState extends State<HomePage> {
         id: 1,
         name: 'วุ้นเส้นต้มยำ',
         material:
-            'วุ้นเส้น 80 กิโลแคลลอรี \nน้ำต้มยำ 65 กิโลแคลลอรี \nหมูสับ 200 กิโลแคลลอรี \nหมูนุ่ม 220 กิโลแคลลอรี \nลูกชิ้นหมู 50 กิโลแคลลอรี',
-        calorie: '615',
+            'วุ้นเส้น 100 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        calorie: '730',
         price: 40,
         img: '1-glassnoodletomyum.jpg'),
     Noodle(
         id: 2,
         name: 'บะหมี่กึ่งสำเร็จรูปน้ำใส',
         material:
-            'เส้นบะหมี่กึ่งสำเร็จรูป 374 กิโลแคลลอรี \nน้ำใส 30 กิโลแคลลอรี \nลูกชิ้นปลา 117 กิโลแคลลอรี \nลูกชิ้นหมู 50 กิโลแคลลอรี',
-        calorie: '571',
+            'เส้นบะหมี่กึ่งสำเร็จรูป 250 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nลูกชิ้นปลา 180 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        calorie: '620',
         price: 40,
         img: '2-mamanamsai.jpg'),
     Noodle(
         id: 3,
         name: 'เส้นกลางต้มยำ',
         material:
-            'เส้นกลาง 335 กิโลแคลลอรี \nน้ำต้มยำ 65 กิโลแคลลอรี \nหมูนุ่ม 200 กิโลแคลลอรี \nหมูสับ 200 กิโลแคลลอรี \nหมูตุ๋น 240 กิโลแคลลอรี',
-        calorie: '1,040',
+            'เส้นกลาง 160 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี \nหมูตุ๋น 250 กิโลแคลลอรี',
+        calorie: '790',
         price: 50,
         img: '3-m_noodletomyum.jpg'),
     Noodle(
         id: 4,
         name: 'หมี่ขาวน้ำใส',
         material:
-            'เส้นหมี่ขาว 114 กิโลแคลลอรี \nน้ำใส 30 กิโลแคลลอรี \nหมูนุ่ม 220 กิโลแคลลอรี \nลูกชิ้นหมู 170 กิโลแคลลอรี',
-        calorie: '534',
+            'เส้นหมี่ขาว 138 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        calorie: '478',
         price: 40,
         img: '4-ricenoodlenumsai.jpg'),
     Noodle(
         id: 5,
         name: 'หมี่เหลืองต้มยำเกี๊ยวหมู',
         material:
-            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำต้มยำ 65 กิโลแคลลอรี \nเกี๊ยวหมู 275 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี',
-        calorie: '790',
+            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำต้มยำ 80 กิโลแคลลอรี \nเกี๊ยวหมู 200 กิโลแคลลอรี \nหมูแดง 200 กิโลแคลลอรี',
+        calorie: '730',
         price: 40,
         img: '5-eggnoodletomyum.jpg'),
     Noodle(
         id: 6,
         name: 'หมี่เหลืองน้ำใส',
         material:
-            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำใส 30 กิโลแคลลอรี \nหมูนุ่ม 200 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
-        calorie: '630',
+            'เส้นหมี่เหลือง 250 กิโลแคลลอรี \nน้ำใส 40 กิโลแคลลอรี \nหมูนุ่ม 150 กิโลแคลลอรี \nลูกชิ้นหมู 150 กิโลแคลลอรี',
+        calorie: '590',
         price: 40,
         img: '6-eggnoodlenamsai.png'),
     Noodle(
         id: 7,
         name: 'เส้นเล็กน้ำตก',
         material:
-            'เส้นเล็ก 335 กิโลแคลลอรี \nน้ำตก 180 กิโลแคลลอรี \nหมูสับ 200 กิโลแคลลอรี',
-        calorie: '715',
+            'เส้นเล็ก 180 กิโลแคลลอรี \nน้ำตก 100 กิโลแคลลอรี \nหมูสับ 150 กิโลแคลลอรี',
+        calorie: '430',
         price: 40,
         img: '7-thinnoodle-namtok.jpg'),
     Noodle(
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Text(
                                     'ร้านก๋วยเตี๋ยวตั้งเตาฮะ',
-                                    style: GoogleFonts.sriracha(
+                                    style: GoogleFonts.sarabun(
                                       fontSize: 23,
                                       color: Colors.white,
                                       decoration:
@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Text(
                                   ' เครื่องคำนวณแคลลอรี ',
-                                  style: GoogleFonts.sriracha(
+                                  style: GoogleFonts.sarabun(
                                     fontSize: 25,
                                     color: Colors.black,
                                   ),
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.center,
                   child: Text(
                     'เมนูก๋วยเตี๋ยวยอดฮิต!!',
-                    style: GoogleFonts.sriracha(
+                    style: GoogleFonts.sarabun(
                       fontSize: 25,
                       color: Colors.white,
                     ),
@@ -571,32 +571,12 @@ class _Pagedetail extends State<Pagedetail> {
                             Row(
                               children: [
                                 Text(
-                                  'อ้างอิงข้อมูลจาก : lovefitt.com',
+                                  'ข้อมูลจาก : USDA FoodData Central',
                                   style: GoogleFonts.sarabun(
                                       fontSize: 16,
                                       color: const Color.fromARGB(255, 4, 92, 143),
                                       fontWeight: FontWeight.bold),
-                                ),
-                                RichText(
-                                    text: TextSpan(children: [
-                                  TextSpan(
-                                    text: " *Click here*",
-                                    style: GoogleFonts.sarabun(
-                                        fontSize: 14,
-                                        color: const Color.fromARGB(255, 255, 0, 0),
-                                        fontWeight: FontWeight.bold),
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () async {
-                                        var url =
-                                            "https://www.lovefitt.com/calories-monitor/%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99/?utm_source=chatgpt.com";
-                                        if (await canLaunch(url)) {
-                                          await launch(url);
-                                        } else {
-                                          throw 'Could not launch $url';
-                                        }
-                                      },
-                                  ),
-                                ]))
+                                )
                               ],
                             ),
                           ],
